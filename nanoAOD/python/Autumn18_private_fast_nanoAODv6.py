@@ -24,41 +24,42 @@ else:
     logger = logging.getLogger(__name__)
     ov = False
 
-# Redirector
-try:
-    redirector = sys.modules['__main__'].redirector
-except:
-    if "clip" in os.getenv("HOSTNAME").lower():
-        from Samples.Tools.config import redirector_clip as redirector
-    else:
-        from Samples.Tools.config import redirector as redirector
-
 # DB
 
-ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/ttG_noFullyHad", xSection=4.168e+00) 
+ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttG_noFullyHad", xSection=4.168e+00) 
 ttG_noFullyHad_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/top_boson_reweight_card.pkl"
-ttZ01j_fast         =  Sample.fromDirectory("ttZ01j_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/ttZ01j", xSection=1.166e-01)
+ttG_noFullyHad_fast.normalization = 2614389.0
+ttZ01j_fast         =  Sample.fromDirectory("ttZ01j_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttZ01j", xSection=1.166e-01)
 ttZ01j_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/top_boson_reweight_card.pkl"
-ttW01j_fast         =  Sample.fromDirectory("ttW01j_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/ttW01j", xSection=1.458e+00)
+ttZ01j_fast.normalization =  1170285.0
+ttW01j_fast         =  Sample.fromDirectory("ttW01j_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttW01j", xSection=1.458e+00)
 ttW01j_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/top_boson_reweight_card.pkl"
+ttW01j_fast.normalization = 1081772.0
 
-WZTo3L1Nu_fast      =  Sample.fromDirectory("WZTo3L1Nu_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/WZTo3L1Nu", xSection=1.729e+00)
+WZTo3L1Nu_fast      =  Sample.fromDirectory("WZTo3L1Nu_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/WZTo3L1Nu", xSection=1.729e+00)
 WZTo3L1Nu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
-WZTojj2L_fast       =  Sample.fromDirectory("WZTojj2L_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/WZTojj2L", xSection=3.568e+00)
+WZTo3L1Nu_fast.normalization = 1766697.0
+WZTojj2L_fast       =  Sample.fromDirectory("WZTojj2L_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/WZTojj2L", xSection=3.568e+00)
 WZTojj2L_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
-WZToLNujj_fast      =  Sample.fromDirectory("WZToLNujj_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/WZToLNujj", xSection=1.163e+01)
+WZTojj2L_fast.normalization = 1771616.0
+WZToLNujj_fast      =  Sample.fromDirectory("WZToLNujj_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/WZToLNujj", xSection=1.163e+01)
 WZToLNujj_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
-WGToLNu_fast        =  Sample.fromDirectory("WGToLNu_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/WGToLNu", xSection=5.453e+01)
+WZToLNujj_fast.normalization = 1725969.0
+WGToLNu_fast        =  Sample.fromDirectory("WGToLNu_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/WGToLNu", xSection=5.453e+01)
 WGToLNu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
-ZGTo2L_fast         =  Sample.fromDirectory("ZGTo2L_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/ZGTo2L", xSection=9.087e+00)
+WGToLNu_fast.normalization = 1269847.0
+ZGTo2L_fast         =  Sample.fromDirectory("ZGTo2L_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ZGTo2L", xSection=9.087e+00)
 ZGTo2L_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
-WW_fast             =  Sample.fromDirectory("WW_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/WW", xSection=1.194e+01)
+ZGTo2L_fast.normalization = 1461428.0
+WW_fast             =  Sample.fromDirectory("WW_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/WW", xSection=1.194e+01)
 WW_fast.reweight_pkl     = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/boson_reweight_card.pkl"
+WW_fast.normalization = 1737656.0
 
 allSamples = [
     ttG_noFullyHad_fast,
     ttZ01j_fast,
     ttW01j_fast,
+
     WZTo3L1Nu_fast,
     WZTojj2L_fast,
     WZToLNujj_fast,
@@ -68,4 +69,8 @@ allSamples = [
 ]
 
 for s in allSamples:
-    s.isData = False
+    s.isData    = False
+    s.isFastSim = True
+    for i_f, f in enumerate(s.files):
+        if f.startswith('/eos/'):
+            s.files[i_f] = 'root://eos.grid.vbc.ac.at/'+f
