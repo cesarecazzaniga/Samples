@@ -1,19 +1,21 @@
 #run in CMSSW_9_4_7
-tag = 'Summer16-mAOD949'
+tag = 'Autumn18-mAODv1-10222'
 
+from CRABAPI.RawCommand import crabCommand
 from WMCore.Configuration import Configuration
 config = Configuration()
 
 config.section_("General")
-config.General.requestName = "tmp" #PRIYA
+config.General.requestName = "fastMAOD" 
 config.General.workArea = 'crab_miniAOD_%s' % tag
 config.General.transferLogs = True
 
 config.section_("JobType")
 config.JobType.pluginName = 'Analysis'
 #config.JobType.psetName = '../../cfg/miniAOD_mc_fast_102X_Autumn18.py'
-config.JobType.psetName = '../../cfg/miniAODv3_mc_949.py'
+config.JobType.psetName = '../../cfg/miniAODv1_Autumn18_fast_10_2_22.py'
 config.JobType.disableAutomaticOutputCollection = False
+config.JobType.allowUndistributedCMSSW = True
 
 config.section_("Data")
 #config.Data.splitting = 'FileBased'
@@ -38,10 +40,15 @@ if __name__ == '__main__':
     from CRABAPI.RawCommand import crabCommand
 
     for input_dataset in [
-       #'/DisplacedStops-mstop-250-ctau-0p01/schoef-Stops2l-00b89d02933778e18fabfa9e3d5e723a/USER',
-       #'/DisplacedStops-mstop-250-ctau-0p1/schoef-Stops2l-a19b5846e9911d7daa1e4ef4f70e9350/USER',
-        '/tOrtbar_WZ01j_OLRLL_LO_ext5/schoef-20-06-19-f7b11725a86c799f51ca60747917325e/USER',
-        '/tWZ_NLO_v16_ext3/schoef-20-06-19-f7b11725a86c799f51ca60747917325e/USER',
+        '/ttG_noFullyHad-v5/schoef-ttG_noFullyHad-v5-fa75f6d0d64d97494f28d49b68b6ba8c/USER',
+        '/ttW01j-v5/schoef-ttW01j-v5-d30966c9709b9416b921be2ac111acc6/USER',
+        '/ttZ01j-v5/schoef-ttZ01j-v5-5941b9a9132a067bf58859850614a6bf/USER',
+        '/WGToLNu/schoef-WGToLNu-888b7a86c2f3c15fead55bb8986384d5/USER',
+        '/WW-v5/schoef-WW-v5-448bcad3b0404ce78bc7375a23091706/USER',
+        '/WZTo3L1Nu-v5/schoef-WZTo3L1Nu-v5-151ec2871e2ed107def2a3aa630d2b24/USER',
+        '/WZTojj2L-v5/schoef-WZTojj2L-v5-51f23f9fff638dfa36bf796f0c0fdb5e/USER',
+        '/WZToLNujj-v5/schoef-WZToLNujj-v5-dfc272e117ae7be94858714bc60ae844/USER',
+        '/ZGTo2L-v5/schoef-ZGTo2L-v5-84bab5a634a89234423bfe901d2c77f0/USER',
     ]:
         config.Data.inputDataset = input_dataset
         config.General.requestName = input_dataset.split('/')[1] 

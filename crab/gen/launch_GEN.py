@@ -39,6 +39,9 @@ config.section_("JobType")
 config.JobType.pluginName = 'PrivateMC'
 config.JobType.psetName = cfgFile
 config.JobType.disableAutomaticOutputCollection = False
+config.JobType.allowUndistributedCMSSW = True
+#config.JobType.numCores = 1
+config.JobType.maxMemoryMB = 3500 #for genToReco
 
 config.section_("Data")
 config.Data.splitting = 'EventBased'
