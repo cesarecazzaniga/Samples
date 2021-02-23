@@ -4,6 +4,8 @@ Some definitions.
 import os
 
 ## This definition might not work for everybody. Update with whatever you like.
+if os.environ['USER'] in ['dietrich.liko']:
+    dbDir = '/users/dietrich.liko/caches/Samples'
 if os.environ['USER'] in ['llechner']:
     dbDir = '/afs/hephy.at/data/llechner01/TTGammaEFT/cache/samples/'
 elif os.environ['USER'] in ['lukas.lechner']: #CLIP
