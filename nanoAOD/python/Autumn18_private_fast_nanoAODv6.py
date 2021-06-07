@@ -67,8 +67,8 @@ ZGTo2L_fast.normalization = 6776987.0
 
 allSamples = [
     ttG_noFullyHad_fast,
-#    WGToLNu_fast,
-#    ZGTo2L_fast,
+    WGToLNu_fast,
+    ZGTo2L_fast,
 
 #    ttZ01j_fast,
 #    ttW01j_fast,
