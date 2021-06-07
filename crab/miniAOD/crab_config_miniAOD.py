@@ -22,7 +22,7 @@ config.section_("Data")
 #config.Data.splitting = 'EventBased'
 config.Data.splitting = 'EventAwareLumiBased'
 #config.Data.totalUnits  = 500000 
-config.Data.unitsPerJob = 2000
+config.Data.unitsPerJob = 5000
 #config.Data.totalUnits  = 50000 
 config.Data.publication = True
 config.Data.inputDBS = 'phys03'
@@ -40,15 +40,9 @@ if __name__ == '__main__':
     from CRABAPI.RawCommand import crabCommand
 
     for input_dataset in [
-        '/ttG_noFullyHad-v5/schoef-ttG_noFullyHad-v5-fa75f6d0d64d97494f28d49b68b6ba8c/USER',
-        '/ttW01j-v5/schoef-ttW01j-v5-d30966c9709b9416b921be2ac111acc6/USER',
-        '/ttZ01j-v5/schoef-ttZ01j-v5-5941b9a9132a067bf58859850614a6bf/USER',
-        '/WGToLNu/schoef-WGToLNu-888b7a86c2f3c15fead55bb8986384d5/USER',
-        '/WW-v5/schoef-WW-v5-448bcad3b0404ce78bc7375a23091706/USER',
-        '/WZTo3L1Nu-v5/schoef-WZTo3L1Nu-v5-151ec2871e2ed107def2a3aa630d2b24/USER',
-        '/WZTojj2L-v5/schoef-WZTojj2L-v5-51f23f9fff638dfa36bf796f0c0fdb5e/USER',
-        '/WZToLNujj-v5/schoef-WZToLNujj-v5-dfc272e117ae7be94858714bc60ae844/USER',
-        '/ZGTo2L-v5/schoef-ZGTo2L-v5-84bab5a634a89234423bfe901d2c77f0/USER',
+    "/ttG_noFullyHad-v6/schoef-ttG_noFullyHad-v6-fa75f6d0d64d97494f28d49b68b6ba8c/USER",
+    "/WGToLNu-v6/schoef-WGToLNu-v6-888b7a86c2f3c15fead55bb8986384d5/USER",
+    "/ZGTo2L-v6/schoef-ZGTo2L-v6-84bab5a634a89234423bfe901d2c77f0/USER",
     ]:
         config.Data.inputDataset = input_dataset
         config.General.requestName = input_dataset.split('/')[1] 

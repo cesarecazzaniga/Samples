@@ -27,7 +27,9 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('file:/afs/hephy.at/work/p/phussain/backup/CMSSW_10_2_11_patch1/src/SUS-RunIIAutumn18MiniAOD-00142.root'),
+    fileNames = cms.untracked.vstring(
+        'file:/users/robert.schoefbeck/CMS/test/CMSSW_10_2_22/src/Samples/crab/miniAOD/miniAODSIM.root ', 
+    ),
     secondaryFileNames = cms.untracked.vstring()
 )
 
