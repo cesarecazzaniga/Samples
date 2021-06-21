@@ -36,6 +36,18 @@ ZGTo2L_fast =  Sample.fromDirectory("ZGTo2L_fast", "/eos/vbc/user/robert.schoefb
 ZGTo2L_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v6/ZGTo2L_reweight_card.pkl"
 ZGTo2L_fast.normalization = 6776987.0
 
+ttZ01j_fast         =  Sample.fromDirectory("ttZ01j_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ttZ01j", xSection=6.563e-02)
+ttZ01j_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/ttZ01j_reweight_card.pkl"
+ttZ01j_fast.normalization =  1488765.0
+
+WZTo3L1Nu_fast         =  Sample.fromDirectory("WZTo3L1Nu_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/WZTo3L1Nu", xSection=1.036e+00)
+WZTo3L1Nu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/WZTo3L1Nu_reweight_card.pkl"
+WZTo3L1Nu_fast.normalization =  2049842.0
+
+ZZ_fast         =  Sample.fromDirectory("ZZ_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ZZ", xSection=1.134e-01)
+ZZ_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/ZZ_reweight_card.pkl"
+ZZ_fast.normalization =  2607863.0
+
 #ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttG_noFullyHad", xSection=4.168e+00) 
 #ttG_noFullyHad_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/top_boson_reweight_card.pkl"
 #ttG_noFullyHad_fast.normalization = 2614389.0
@@ -70,10 +82,11 @@ allSamples = [
     WGToLNu_fast,
     ZGTo2L_fast,
 
-#    ttZ01j_fast,
 #    ttW01j_fast,
 #
-#    WZTo3L1Nu_fast,
+    ttZ01j_fast,
+    WZTo3L1Nu_fast,
+    ZZ_fast,
 #    WZTojj2L_fast,
 #    WZToLNujj_fast,
 #    WGToLNu_fast,

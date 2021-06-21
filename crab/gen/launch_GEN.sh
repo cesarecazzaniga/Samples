@@ -294,7 +294,7 @@
 #echo "python launch_GEN.py $@ --config gensim_WG_LO_Summer16 --production_label ${label} --unitsPerJob 200 --totalUnits 1000  --gridpackDir ${dir} --gridpack ${gridpack} --publish"
 #
 
-dir="/eos/vbc/user/robert.schoefbeck/gridpacks/v6/"
-gridpack="ttg_noFullyHad_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz"
+dir="/eos/vbc/user/robert.schoefbeck/gridpacks/central/"
+gridpack="tt01j_1l_LO_MLM_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz"
 label="ttG_test_2"
-python launch_GEN.py $@ --config gen_LO_0j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --gridpackDir ${dir} --gridpack ${gridpack} --publish
+python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --gridpackDir ${dir} --gridpack ${gridpack} --publish
