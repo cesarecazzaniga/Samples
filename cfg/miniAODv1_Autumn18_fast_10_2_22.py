@@ -28,7 +28,7 @@ process.maxEvents = cms.untracked.PSet(
 
 # Input source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring('file:reco_FastSim_LO_0j_102X_CP5_FastSim.root'),
+    fileNames = cms.untracked.vstring('root://eos.grid.vbc.ac.at//store/user/schoef/ttG_noFullyHad-v6/ttG_noFullyHad-v6/210216_204252/0000/reco_FastSim_LO_0j_102X_CP5_FastSim_1.root'),
     secondaryFileNames = cms.untracked.vstring()
 )
 
