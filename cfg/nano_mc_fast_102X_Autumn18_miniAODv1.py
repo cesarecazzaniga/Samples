@@ -22,13 +22,14 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-        input = cms.untracked.int32(-1)
+        input = cms.untracked.int32(20)
 )
 
 # Input source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-        'file:/users/robert.schoefbeck/CMS/test/CMSSW_10_2_22/src/Samples/crab/miniAOD/miniAODSIM.root ', 
+        #'file:/users/robert.schoefbeck/CMS/test/CMSSW_10_2_22/src/Samples/crab/miniAOD/miniAODSIM.root ', 
+        'root://eos.grid.vbc.ac.at//store/user/liko/MinBias/SUS-RunIIAutumn18FSPremix-Stop250-dm10-MINIAOD-001/210703_144349/0000/SUS-RunIIAutumn18MiniAOD-00171_1.root', 
     ),
     secondaryFileNames = cms.untracked.vstring()
 )

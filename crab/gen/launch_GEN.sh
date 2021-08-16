@@ -294,21 +294,24 @@
 #echo "python launch_GEN.py $@ --config gensim_WG_LO_Summer16 --production_label ${label} --unitsPerJob 200 --totalUnits 1000  --gridpackDir ${dir} --gridpack ${gridpack} --publish"
 #
 
-dir="/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_4/"
-label="flavo4_ttG_noFullyHad"
-python launch_GEN.py $@ --config gen_LO_0j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack ttG_noFullyHad_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_ttW01j"
-python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack ttW01j_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_ttZ01j"
-python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack ttZ01j_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_WGToLNu"
-python launch_GEN.py $@ --config gen_LO_012j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack WGToLNu_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_WW"
-python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack WW_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_WZTo3L1Nu"
-python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack WZTo3L1Nu_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_ZGTo2L"
-python launch_GEN.py $@ --config gen_LO_012j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack ZGTo2L_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
-label="flavo4_ZZ"
-python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 5000 --totalUnits 1000000 --publish --gridpackDir ${dir} --gridpack ZZ_slc7_amd64_gcc700_CMSSW_10_6_0_tarball.tar.xz
- 
+#/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ttZ01j-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+#/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/WZTo3L1Nu-vec-rw_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+#/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/WZTo3L1Nu-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+#/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ZZ-vec-rw_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+#/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ZZ-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+dir="/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/"
+label="flavor_vec_gen_ttZ01j"
+python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 50000 --totalUnits 30000000 --publish --gridpackDir ${dir} --gridpack ttZ01j-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz 
+label="flavor_vec_gen_WZTo3L1Nu"
+python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 50000 --totalUnits 30000000 --publish --gridpackDir ${dir} --gridpack WZTo3L1Nu-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz 
+label="flavor_vec_gen_ZZ"
+python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 50000 --totalUnits 30000000 --publish --gridpackDir ${dir} --gridpack ZZ-vec_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz 
+
+#dir="/mnt/hephy/cms/robert.schoefbeck/gridpacks/SMEFTsim_general/flavor_v1/"
+#
+#label="SMEFTsim_general_flavor_v1_ttZ01j"
+#python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 2000 --totalUnits 5000000 --publish --gridpackDir ${dir} --gridpack ttZ01j_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz
+#label="SMEFTsim_general_flavor_v1_WZTo3L1Nu"
+#python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 2000 --totalUnits 5000000 --publish --gridpackDir ${dir} --gridpack WZTo3L1Nu_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz 
+#label="SMEFTsim_general_flavor_v1_ZZ"
+#python launch_GEN.py $@ --config gen_LO_01j_mc_102X_CP5 --production_label ${label} --unitsPerJob 2000 --totalUnits 5000000 --publish --gridpackDir ${dir} --gridpack ZZ_slc7_amd64_gcc700_CMSSW_10_6_19_tarball.tar.xz 

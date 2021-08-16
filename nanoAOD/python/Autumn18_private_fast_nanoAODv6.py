@@ -28,6 +28,9 @@ ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/use
 ttG_noFullyHad_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v6/ttG_noFullyHad_reweight_card.pkl"
 ttG_noFullyHad_fast.normalization = 16777216.0
 
+ttG_noFullyHad_SM_fast =  Sample.fromDirectory("ttG_noFullyHad_SM_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/v5/ttG_noFullyHad_SM", xSection=3.470e+00) 
+ttG_noFullyHad_SM_fast.normalization = 6042*3000.
+
 WGToLNu_fast =  Sample.fromDirectory("WGToLNu_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v6/WGToLNu/", xSection=6.307e+01) 
 WGToLNu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v6/WGToLNu_reweight_card.pkl"
 WGToLNu_fast.normalization = 5687653.0
@@ -67,6 +70,7 @@ ZGTo2L_fast.normalization = 6776987.0
 
 allSamples = [
     ttG_noFullyHad_fast,
+    ttG_noFullyHad_SM_fast,
     WGToLNu_fast,
     ZGTo2L_fast,
 
