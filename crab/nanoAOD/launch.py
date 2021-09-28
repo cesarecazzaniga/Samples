@@ -54,30 +54,32 @@ else:
 #allSamples += Summer16_private + Fall17_private + Autumn18_private
 #allSamples += Run2016_17Jul2018 + Run2017_31Mar2018 + Run2018_26Sep2018 + Run2018_promptReco + Run2018_17Sep2018 + Run2018D_22Jan2019
 
-all_modules  = [ "Spring16_miniAODv2", "Summer16_Fast_miniAODv3", "Fall17_Fast_miniAODv2", "Autumn18_Fast_miniAODv1", "Summer16_miniAODv2", "Summer16_miniAODv3", "Fall17_miniAODv2", "Autumn18_miniAODv1" ]
-all_modules += [ "Run2016_17Jul2018", "Run2017_31Mar2018", "Run2018_26Sep2018", "Run2018_promptReco", "Run2018_17Sep2018", "Run2017_17Nov2017" ]
-all_modules += [ "Summer16_private", "Fall17_private", "Autumn18_private", "Run2018D_22Jan2019"]
+all_modules  = [ "Spring16_miniAODv2", "Summer16_Fast_miniAODv3", "Fall17_Fast_miniAODv2", "Autumn18_Fast_miniAODv1", "Summer16_miniAODv2", "Summer16_miniAODv3", "Fall17_miniAODv2", "Autumn18_miniAODv1" , "Summer20UL16_miniAOD", "Summer20UL16_miniAODAPV" , "Summer20UL17_miniAOD" , "Summer20UL18_miniAOD" ]
+all_modules += [ "Run2016_17Jul2018", "Run2017_31Mar2018", "Run2018_26Sep2018", "Run2018_promptReco", "Run2018_17Sep2018", "Run2017_17Nov2017"  ]
+all_modules += [ "Summer16_private", "Fall17_private", "Autumn18_private", "Run2018D_22Jan2019","Run2016UL_miniAOD",  "Run2017UL_miniAOD", "Run2018UL_miniAOD"]
 
 cfgPath    = os.path.expandvars( "$CMSSW_BASE/src/Samples/cfg/" )
 allConfigs = [ x.strip( ".py" ) for x in os.listdir( cfgPath ) if x.endswith(".py") ]
 
 parser = OptionParser(usage="python launch.py [options] component1 [ component2 ...]", \
                           description="Launch heppy jobs with CRAB3. Components correspond to the variables defined in heppy_samples.py (their name attributes)")
-parser.add_option("--production_label", dest="production_label",                                  default="heppy", help="production label")
-parser.add_option("--remoteDir",        dest="remoteDir",                                         default="",      help="remote subdirectory")
-parser.add_option("--unitsPerJob",      dest="unitsPerJob",      type=int,                        default=1,       help="Nr. of units (files) / crab job")
-parser.add_option("--totalUnits",       dest="totalUnits",       type=int,                        default=None,    help="Total nr. of units (files)")
-parser.add_option("--config",           dest="config",                     choices = allConfigs,                   help="Which config?")
-parser.add_option("--module",           dest="module",                     choices = all_modules,                  help="Which module X in Samples.miniAOD.X?")
-parser.add_option("--sample",           dest="sample",                                                             help="Which sample?")
-parser.add_option("--inputDBS",         dest="inputDBS",          choices = ['phys03','global'],  default="global",help="Private or global production?")
-parser.add_option("--publish",          action='store_true',                                      default=False,   help="Publish on dbs?")
-parser.add_option("--runOnNonValid",    action='store_true',                                      default=False,   help="Allow running on invalid samples/samples still in production?")
-parser.add_option("--runOnLocal",       action='store_true',                                      default=False,   help="Run on local DPM files")
-parser.add_option("--dryrun",           action='store_true',                                      default=False,   help="Test script?")
-parser.add_option("--sorted",           action='store_true',                                      default=False,   help="sort filelist by ending integer (only for local processing)")
-parser.add_option('--nJobs',            action='store',          type=int,                        default=1,       help="Maximum number of simultaneous jobs.")
-parser.add_option('--job',              action='store',          type=int,                        default=0,       help="Run only job i")
+parser.add_option("--production_label", dest="production_label",                                  	default="heppy", help="production label")
+parser.add_option("--remoteDir",        dest="remoteDir",                                         	default="",      help="remote subdirectory")
+parser.add_option("--unitsPerJob",      dest="unitsPerJob",      type=int,                        	default=1,       help="Nr. of units (files) / crab job")
+parser.add_option("--totalUnits",       dest="totalUnits",       type=int,                        	default=None,    help="Total nr. of units (files)")
+parser.add_option("--config",           dest="config",                     choices = allConfigs,                   	 help="Which config?")
+parser.add_option("--module",           dest="module",                     choices = all_modules,                  	 help="Which module X in Samples.miniAOD.X?")
+parser.add_option("--sample",           dest="sample",                                                             	 help="Which sample?")
+parser.add_option("--inputDBS",         dest="inputDBS",          choices = ['phys03','global'],  	default="global",help="Private or global production?")
+parser.add_option("--publish",          action='store_true',                                      	default=False,   help="Publish on dbs?")
+parser.add_option("--isData",           action='store_true',                                      	default=False,   help="Running on data or MC?")
+parser.add_option("--Run",              dest="Run",        choices = ['UL2016','UL2017','UL2018','None'],default='None', help="Which data Run running on?")
+parser.add_option("--runOnNonValid",    action='store_true',                                      	default=False,   help="Allow running on invalid samples/samples still in production?")
+parser.add_option("--runOnLocal",       action='store_true',                                      	default=False,   help="Run on local DPM files")
+parser.add_option("--dryrun",           action='store_true',                                      	default=False,   help="Test script?")
+parser.add_option("--sorted",           action='store_true',                                      	default=False,   help="sort filelist by ending integer (only for local processing)")
+parser.add_option('--nJobs',            action='store',          type=int,                        	default=1,       help="Maximum number of simultaneous jobs.")
+parser.add_option('--job',              action='store',          type=int,                        	default=0,       help="Run only job i")
 ( options, args ) = parser.parse_args()
 
 print "## Starting submission to crab for sample(s) %s from module %s"%( options.sample, options.module )
@@ -112,7 +114,9 @@ os.system("which crab")
 os.environ["CRAB_UNITS_PER_JOB"] = str(options.unitsPerJob)
 if options.totalUnits:
     os.environ["CRAB_TOTAL_UNITS"] = str(options.totalUnits)
-
+# Running on Data
+os.environ["CRAB_IS_DATA"] = 'True' if options.isData else 'False'
+print "## Running on  Data : ", os.environ["CRAB_IS_DATA"]
 for dataset in datasets:
 
     if options.runOnLocal:
@@ -189,12 +193,18 @@ for dataset in datasets:
 
         os.environ["CRAB_DATASET"]      = dataset.DASname
         os.environ["CRAB_input_DBS"]    = options.inputDBS
+	os.environ["CRAB_RUN"]    	= options.Run
         if options.dryrun:
             print "Processing %s %s" %( dataset.name, dataset.DASname )
             print "## Dryrun, continue..."
             continue
-
-        #os.system("crab submit --dryrun -c crabConfig.py")
-        os.system("crab submit -c crabConfig.py")
-        #os.system("crab preparelocal crabConfig.py")
+	if options.isData and options.Run:
+		os.system("crab submit -c crabConfig.py")
+        	#os.system("crab submit --dryrun -c crabConfig.py")
+		#os.system("crab preparelocal crabConfig.py")
+	else:
+		print "here for MC"
+        	#os.system("crab submit --dryrun -c crabConfig.py")
+        	os.system("crab submit -c crabConfig.py")
+        	#os.system("crab preparelocal crabConfig.py")
 
