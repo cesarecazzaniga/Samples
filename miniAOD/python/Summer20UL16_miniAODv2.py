@@ -60,22 +60,22 @@ TTSingleLep_pow			= FWLiteSample.fromDAS("TTSingleLep_pow", "/TTToSemiLeptonic_T
 TTJets = [ TTLep_pow, TTSingleLep_pow ]
 
 ##ZInv
-ZJetsToNuNu_HT-100To200		= FWLiteSample.fromDAS("ZJetsToNuNu_HT-100To200", "/ZJetsToNuNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v1/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ZJetsToNuNu_HT-200To400		= FWLiteSample.fromDAS("ZJetsToNuNu_HT-200To400", "/ZJetsToNuNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v1/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ZJetsToNuNu_HT-400To600		= FWLiteSample.fromDAS("ZJetsToNuNu_HT-400To600", "/ZJetsToNuNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ZJetsToNuNu_HT-600To800		= FWLiteSample.fromDAS("ZJetsToNuNu_HT-600To800", "/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ZJetsToNuNu_HT-800To1200	= FWLiteSample.fromDAS("ZJetsToNuNu_HT-800To1200", "/ZJetsToNuNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-#ZJetsToNuNu_HT-1200To2500	= FWLiteSample.fromDAS("ZJetsToNuNu_HT-1200To2500", "", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ZJetsToNuNu_HT-2500ToInf	= FWLiteSample.fromDAS("ZJetsToNuNu_HT-2500ToInf", "/ZJetsToNuNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT100To200		= FWLiteSample.fromDAS("ZJetsToNuNu_HT100To200", "/ZJetsToNuNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v1/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT200To400		= FWLiteSample.fromDAS("ZJetsToNuNu_HT200To400", "/ZJetsToNuNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v1/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT400To600		= FWLiteSample.fromDAS("ZJetsToNuNu_HT400To600", "/ZJetsToNuNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT600To800		= FWLiteSample.fromDAS("ZJetsToNuNu_HT600To800", "/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT800To1200	= FWLiteSample.fromDAS("ZJetsToNuNu_HT800To1200", "/ZJetsToNuNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+#ZJetsToNuNu_HT1200To2500	= FWLiteSample.fromDAS("ZJetsToNuNu_HT1200To2500", "", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
+ZJetsToNuNu_HT2500ToInf	= FWLiteSample.fromDAS("ZJetsToNuNu_HT2500ToInf", "/ZJetsToNuNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v3/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
 
 ZJetsToNuNu = [
-		ZJetsToNuNu_HT-100To200,
-		ZJetsToNuNu_HT-200To400,
-		ZJetsToNuNu_HT-400To600,
-		ZJetsToNuNu_HT-600To800,
-		ZJetsToNuNu_HT-800To1200,
-		#ZJetsToNuNu_HT-1200To2500,
-		ZJetsToNuNu_HT-2500ToInf,
+		ZJetsToNuNu_HT100To200,
+		ZJetsToNuNu_HT200To400,
+		ZJetsToNuNu_HT400To600,
+		ZJetsToNuNu_HT600To800,
+		ZJetsToNuNu_HT800To1200,
+		#ZJetsToNuNu_HT1200To2500,
+		ZJetsToNuNu_HT2500ToInf,
 		]
 
 ##DiBoson
@@ -156,7 +156,7 @@ ttWJetsToLNu_NLO		= FWLiteSample.fromDAS("ttWJetsToLNu_NLO", "/TTWJetsToLNu_Tune
 ttWJetsToQQ_NLO			= FWLiteSample.fromDAS("ttWJetsToQQ_NLO", "/TTWJetsToQQ_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v2/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
 #ttWJets_LO			= FWLiteSample.fromDAS("ttWJets_LO", "", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
 #ttZJets_LO			= FWLiteSample.fromDAS("ttZJets_LO", "", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
-ttX = [TTGJets_NLO, ttWJetsToLNu_NLO, ttWJetsToQQ_NLO, #ttWJets_LO, #ttZJets_LO, ]
+ttX = [TTGJets_NLO, ttWJetsToLNu_NLO, ttWJetsToQQ_NLO,] #ttWJets_LO, #ttZJets_LO, ]
 
 ##QCD
 QCD_HT50to100			= FWLiteSample.fromDAS("QCD_HT50to100", "/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAOD-106X_mcRun2_asymptotic_v13-v1/MINIAODSIM", dbFile=dbFile, overwrite=ov, prefix=redirector_global, skipCheck=True)
