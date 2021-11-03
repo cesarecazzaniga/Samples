@@ -22,6 +22,8 @@ elif os.environ['USER'] in ['schoef']:
     dbDir = '/afs/hephy.at/data/rschoefbeck01/nanoAOD/'
 elif os.environ['USER'] in ['robert.schoefbeck']:
     dbDir = '/users/robert.schoefbeck/caches/Samples'
+elif os.environ['USER'] in ['benjamin.wilhelmy']:
+    dbDir = '/users/robert.schoefbeck/caches/Samples'
 elif os.environ['USER'] in ['erich.birngruber']:
     dbDir = '/users/robert.schoefbeck/caches/Samples'
 elif os.environ['USER'] in ['janik.andrejkovic']:
