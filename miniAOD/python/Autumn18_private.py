@@ -44,13 +44,20 @@ TTX = [
        TTGamma_nofullyhad_LO_A18_private,
 ]
 
+
+ttZ01j_3l_EFT_lepWFilter    = FWLiteSample.fromDAS("ttZ01j_3l_EFT_lepWFilter", "/ttZ01j_lepWFilter/schoef-Autumn18-mAODv1-10222-58e8664f142fdf477807c95cd1ce2e2a/USER", instance="phys03", dbFile=dbFile, overwrite=ov, prefix=redirector, skipCheck=True)
+tWZtoLL01j_3l_EFT_lepFilter = FWLiteSample.fromDAS("tWZtoLL01j_3l_EFT_lepFilter", "/tWZtoLL01j_lepWFilter/schoef-Autumn18-mAODv1-10222-58e8664f142fdf477807c95cd1ce2e2a/USER", instance="phys03", dbFile=dbFile, overwrite=ov, prefix=redirector, skipCheck=True)
+#TTGamma_had_LO_A18_private           = FWLiteSample.fromDPMDirectory("TTGamma_had_LO_A18_private",        "/store/user/tomc/heavyNeutrinoMiniAOD/Autumn18/prompt/ttGamma_Had_5f_ckm_LO_1line",        dbFile=dbFile, overwrite=ov, prefix=redirector_BE, skipCheck=True)
+
 #ZGToLLG_LO_A18_private = FWLiteSample.fromDPMDirectory("ZGToLLG_LO_A18_private",      "/dpm/oeaw.ac.at/home/cms/store/user/llechner/miniAOD/RunIIAutumn18_privProd_miniAODv1/ZAToLLA0123j_5f_LO_MLM/",   dbFile=dbFile, overwrite=ov, prefix=redirector, skipCheck=True)
 
-VGamma = [
+EFT = [
+    ttZ01j_3l_EFT_lepWFilter,
+    tWZtoLL01j_3l_EFT_lepFilter,
 #    ZGToLLG_LO_A18_private,
 ]
 
-allSamples = TTX + VGamma
+allSamples = TTX + EFT
 
 for sample in allSamples:
     sample.isData = False

@@ -16,7 +16,7 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = '../../cfg/miniAODv1_Autumn18_fast_10_2_22.py'
 config.JobType.disableAutomaticOutputCollection = False
 config.JobType.allowUndistributedCMSSW = True
-
+config.JobType.maxMemoryMB = 3500
 config.section_("Data")
 #config.Data.splitting = 'FileBased'
 #config.Data.splitting = 'EventBased'
@@ -40,9 +40,8 @@ if __name__ == '__main__':
     from CRABAPI.RawCommand import crabCommand
 
     for input_dataset in [
-    "/ttG_noFullyHad-v6/schoef-ttG_noFullyHad-v6-fa75f6d0d64d97494f28d49b68b6ba8c/USER",
-    "/WGToLNu-v6/schoef-WGToLNu-v6-888b7a86c2f3c15fead55bb8986384d5/USER",
-    "/ZGTo2L-v6/schoef-ZGTo2L-v6-84bab5a634a89234423bfe901d2c77f0/USER",
+    "/ttZ01j_lepWFilter/schoef-ttZ01j_lepWFilter-899787a12e1226a4d09ffc9eefc66945/USER",
+    "/tWZtoLL01j_lepWFilter/schoef-tWZtoLL01j_lepWFilter-42ad673a357d0ca33dba80eecc7261d9/USER",
     ]:
         config.Data.inputDataset = input_dataset
         config.General.requestName = input_dataset.split('/')[1] 

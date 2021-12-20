@@ -60,11 +60,11 @@ config.Site.storageSite = 'T2_AT_Vienna'
 config.section_("User")
 
 config.Data.outputDatasetTag     = options.production_label
-config.JobType.inputFiles        = [gridpackFile]
+config.JobType.inputFiles        = [gridpackFile] if not gridpackFile.startswith('/cvmfs/') else []
 config.General.requestName       = options.production_label
 config.Data.outputPrimaryDataset = config.General.requestName # dataset name
 
-config.JobType.pyCfgParams = ['gridpack=../'+options.gridpack]
+config.JobType.pyCfgParams = ['gridpack=../'+options.gridpack if not gridpackFile.startswith('/cvmfs/') else 'gridpack='+gridpackFile]
 
 if options.dryrun:
     print "Processing %s" %( options.gridpack )
