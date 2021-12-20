@@ -39,16 +39,16 @@ ZGTo2L_fast =  Sample.fromDirectory("ZGTo2L_fast", "/eos/vbc/user/robert.schoefb
 ZGTo2L_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v6/ZGTo2L_reweight_card.pkl"
 ZGTo2L_fast.normalization = 6776987.0
 
-ttZ01j_fast         =  Sample.fromDirectory("ttZ01j_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ttZ01j", xSection=6.563e-02)
-ttZ01j_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/ttZ01j_reweight_card.pkl"
+ttZ01j_fast         =  Sample.fromDirectory("ttZ01j_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ttZ01j-vec", xSection=5.780e-02)
+ttZ01j_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ttZ01j-vec_reweight_card.pkl"
 ttZ01j_fast.normalization =  1488765.0
 
-WZTo3L1Nu_fast         =  Sample.fromDirectory("WZTo3L1Nu_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/WZTo3L1Nu", xSection=1.036e+00)
-WZTo3L1Nu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/WZTo3L1Nu_reweight_card.pkl"
+WZTo3L1Nu_fast         =  Sample.fromDirectory("WZTo3L1Nu_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/WZTo3L1Nu-vec", xSection=1.118e+00)
+WZTo3L1Nu_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/WZTo3L1Nu-vec_reweight_card.pkl"
 WZTo3L1Nu_fast.normalization =  2049842.0
 
-ZZ_fast         =  Sample.fromDirectory("ZZ_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ZZ", xSection=1.134e-01)
-ZZ_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/order_2/ZZ_reweight_card.pkl"
+ZZ_fast         =  Sample.fromDirectory("ZZ_fast", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/flavor/ZZ-vec", xSection=1.165e-01)
+ZZ_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ZZ-vec_reweight_card.pkl"
 ZZ_fast.normalization =  2607863.0
 
 #ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttG_noFullyHad", xSection=4.168e+00) 
