@@ -5,7 +5,7 @@ import os
 
 ## This definition might not work for everybody. Update with whatever you like.
 if 'SAMPLES_DBDIR' in os.environ:
-    dbDir = os.environ['SAMPLES_DBDIR'] 
+    dbDir = os.environ['SAMPLES_DBDIR']
 elif os.environ['USER'] in ['dietrich.liko']:
     dbDir = '/users/dietrich.liko/caches/Samples'
 elif os.environ['USER'] in ['llechner']:
@@ -32,6 +32,8 @@ elif os.environ['USER'] in ['mdoppler']:
     dbDir = '/afs/hephy.at/data/rschoefbeck01/nanoAOD/'
 elif os.environ['USER'] in ['mzarucki']:
     dbDir = '/afs/hephy.at/data/mzarucki02/nanoAOD/caches'
+elif os.environ['USER'] in ['dennis.schwarz']:
+    dbDir = '/users/dennis.schwarz/caches/Samples'
 else:
     dbDir = '/afs/hephy.at/data/%s01/nanoAOD/'%os.environ['USER']
 
@@ -44,6 +46,6 @@ redirector_clip       = 'root://eos.grid.vbc.ac.at///eos/vbc/incoming/'
 #redirector_clip       = '/eos/vbc/incoming/'
 
 #redirector            = 'root://hephyse.oeaw.ac.at:11001/'
-redirector            =  redirector_global 
+redirector            =  redirector_global
 
 if not os.path.isdir(dbDir): os.makedirs(dbDir)
