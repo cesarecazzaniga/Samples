@@ -51,6 +51,14 @@ ZZ_fast         =  Sample.fromDirectory("ZZ_fast", "/eos/vbc/user/robert.schoefb
 ZZ_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/flavor/vec/ZZ-vec_reweight_card.pkl"
 ZZ_fast.normalization =  2607863.0
 
+ttZ01j_lepWFilter         =  Sample.fromDirectory("ttZ01j_lepWFilter", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/dennis/ttZ01j_lepWFilter/ttZ01j_lepWFilter_schoef-Autumn18-mAODv1-10222-58e8664f142fdf477807c95cd1ce2e2a_USER", xSection=0.1669*0.534) # BR of dilep+semilep = 0.534
+ttZ01j_lepWFilter.reweight_pkl = "/eos/vbc/user/dennis.schwarz/gridpacks/ttZ01j_ZToLL/ttZ01j-vec_reweight_card.pkl"
+ttZ01j_lepWFilter.normalization = 1562385
+
+tWZToLL01j_lepWFilter         =  Sample.fromDirectory("tWZToLL01j_lepWFilter", "/eos/vbc/user/robert.schoefbeck/nanoAODSim_fast_private/dennis/tWZToLL01j_lepWFilter/tWZtoLL01j_lepWFilter_schoef-Autumn18-mAODv1-10222-58e8664f142fdf477807c95cd1ce2e2a_USER", xSection=0.01373*0.534) # BR of dilep+semilep = 0.534
+tWZToLL01j_lepWFilter.reweight_pkl = "/eos/vbc/user/dennis.schwarz/gridpacks/tWZ01j_ZtoLL/tWZ-vec_reweight_card.pkl"
+tWZToLL01j_lepWFilter.normalization = 843157
+
 #ttG_noFullyHad_fast =  Sample.fromDirectory("ttG_noFullyHad_fast", "/eos/vbc/user/robert.schoefbeck/topNanoAODSim_fast_private/v5/ttG_noFullyHad", xSection=4.168e+00) 
 #ttG_noFullyHad_fast.reweight_pkl = "/eos/vbc/user/robert.schoefbeck/gridpacks/v5/top_boson_reweight_card.pkl"
 #ttG_noFullyHad_fast.normalization = 2614389.0
@@ -91,6 +99,8 @@ allSamples = [
     ttZ01j_fast,
     WZTo3L1Nu_fast,
     ZZ_fast,
+    ttZ01j_lepWFilter,
+    tWZToLL01j_lepWFilter,
 #    WZTojj2L_fast,
 #    WZToLNujj_fast,
 #    WGToLNu_fast,
