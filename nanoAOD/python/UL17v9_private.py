@@ -102,8 +102,8 @@ TTSingleLep_pow_CP5.normalization =  106922359721.0
 
 ## single top
 #
-#T_tch_pow           = Sample.fromDirectory("T_tch_pow",        "/eos/vbc/experiments/cms/store/user/prhussai/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/",         xSection=136.02) 
-#T_tch_pow.normalization =  
+T_tch_pow           = Sample.fromDirectory("T_tch_pow",        "/eos/vbc/experiments/cms/store/user/prhussai/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084011/",         xSection=136.02) 
+T_tch_pow.normalization = 13434789518.9 
 TBar_tch_pow        = Sample.fromDirectory("TBar_tch_pow",     "/eos/vbc/experiments/cms/store/user/prhussai/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211124_203248/",     xSection=80.95)
 TBar_tch_pow.normalization = 4471058680.0
 
@@ -131,7 +131,7 @@ top = [
 #    #TTbar,
     TTLep_pow_CP5,
     TTSingleLep_pow_CP5,
-#    T_tch_pow,
+    T_tch_pow,
     TBar_tch_pow,
     T_tWch_ext,
     TBar_tWch_ext,
@@ -141,6 +141,8 @@ top = [
 WWTo2L2Nu           = Sample.fromDirectory("WWTo2L2Nu",        "/eos/vbc/experiments/cms/store/user/prhussai/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/crab_RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1_privateUL16nanov9/211124_161629/",   xSection=12.178)
 WWTo2L2Nu.normalization = 32147079.1672 
 #WWToLNuQQ           = Sample.fromDirectory("WWToLNuQQ",        "/WWToLNuQQ_13TeV-powheg/",         xSection=49.997)
+WW           	    = Sample.fromDirectory("WW",        "/eos/vbc/experiments/cms/store/user/prhussai/WW_TuneCP5_13TeV-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_083948/",         xSection=49.997)
+WW.normalization    = 15634116.1995
 
 ZZTo2L2Nu           = Sample.fromDirectory("ZZTo2L2Nu",        "/eos/vbc/experiments/cms/store/user/prhussai/ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211124_202934/",                     xSection=0.564)
 ZZTo2L2Nu.normalization = 39767479.5829
@@ -161,6 +163,7 @@ WZTo3LNu_amcatnlo.normalization = 87559047.7174
 boson = [
     WWTo2L2Nu,
 #    #WWToLNuQQ,
+    WW,
     ZZTo2L2Nu,
 #    #ZZTo2L2Q,
 #    #ZZTo2Q2Nu,
@@ -184,8 +187,8 @@ WJetsToLNu_HT400to600       = Sample.fromDirectory("WJetsToLNu_HT400to600",     
 WJetsToLNu_HT400to600.normalization = 5468473.0
 WJetsToLNu_HT600to800       = Sample.fromDirectory("WJetsToLNu_HT600to800",       "/eos/vbc/experiments/cms/store/user/prhussai/WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211124_202521/",       xSection=14.5805)
 WJetsToLNu_HT600to800.normalization = 5545298.0
-#WJetsToLNu_HT800to1200      = Sample.fromDirectory("WJetsToLNu_HT800to1200",      "/eos/vbc/experiments/cms/store/user/prhussai/WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/",      xSection=6.65621)
-#WJetsToLNu_HT800to1200.normalization = 
+WJetsToLNu_HT800to1200      = Sample.fromDirectory("WJetsToLNu_HT800to1200",      "/eos/vbc/experiments/cms/store/user/prhussai/WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220323_083111/",      xSection=6.65621)
+WJetsToLNu_HT800to1200.normalization = 5088483.0 
 WJetsToLNu_HT1200to2500     = Sample.fromDirectory("WJetsToLNu_HT1200to2500",     "/eos/vbc/experiments/cms/store/user/prhussai/WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211124_202540/", 	xSection=1.60809)
 WJetsToLNu_HT1200to2500.normalization = 4955636.0
 WJetsToLNu_HT2500toInf      = Sample.fromDirectory("WJetsToLNu_HT2500toInf",      "/eos/vbc/experiments/cms/store/user/prhussai/WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/211124_202600/",     xSection=0.0389136)
@@ -198,7 +201,7 @@ wjets_ht = [
     WJetsToLNu_HT200to400,
     WJetsToLNu_HT400to600,
     WJetsToLNu_HT600to800,
-#    WJetsToLNu_HT800to1200,
+    WJetsToLNu_HT800to1200,
     WJetsToLNu_HT1200to2500,
     WJetsToLNu_HT2500toInf,
     ]
@@ -216,8 +219,8 @@ signals = [
 ## QCD HT bins (cross sections from McM)
 QCD_HT50to100        = Sample.fromDirectory("QCD_HT50to100",        "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_145550/",           xSection=246400000.0)
 QCD_HT50to100.normalization = 26243010.0 
-#QCD_HT100to200       = Sample.fromDirectory("QCD_HT100to200",       "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT100to200_TuneCP5_PSWeights_13TeV-madgraph-pythia8/",          xSection=27850000.0)
-#QCD_HT100to200.normalization = 
+QCD_HT100to200       = Sample.fromDirectory("QCD_HT100to200",       "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT100to200_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084033/",          xSection=27850000.0)
+QCD_HT100to200.normalization = 54760426.0 
 QCD_HT200to300       = Sample.fromDirectory("QCD_HT200to300",       "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT200to300_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_150355/",          xSection=1717000)
 QCD_HT200to300.normalization = 42714435.0
 QCD_HT300to500       = Sample.fromDirectory("QCD_HT300to500",       "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT300to500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_150751/",          xSection=351300)
@@ -226,26 +229,51 @@ QCD_HT500to700       = Sample.fromDirectory("QCD_HT500to700",       "/eos/vbc/ex
 QCD_HT500to700.normalization = 36194860.0 
 QCD_HT700to1000      = Sample.fromDirectory("QCD_HT700to1000",      "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT700to1000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_150836/",         xSection=6802)
 QCD_HT700to1000.normalization = 34051754.0
-#QCD_HT1000to1500     = Sample.fromDirectory("QCD_HT1000to1500",     "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/",        xSection=1206)
-#QCD_HT1000to1500.normalization = 
+#QCD_HT1000to1500     = Sample.fromDirectory("QCD_HT1000to1500",     "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084429/",        xSection=1206)
+#QCD_HT1000to1500.normalization = 9942568.0 
 QCD_HT1500to2000     = Sample.fromDirectory("QCD_HT1500to2000",     "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_145631/",        xSection=120.4)
 QCD_HT1500to2000.normalization = 7701876.0
-#QCD_HT2000toInf      = Sample.fromDirectory("QCD_HT2000toInf",      "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraph-pythia8/",         xSection=25.25)
-#QCD_HT2000toInf.normalization = 
+QCD_HT2000toInf      = Sample.fromDirectory("QCD_HT2000toInf",      "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084104/",         xSection=25.25)
+QCD_HT2000toInf.normalization = 3914281.0 
 
 QCD_HT = [
     QCD_HT50to100,
-#    QCD_HT100to200,
+    QCD_HT100to200,
     QCD_HT200to300,
     QCD_HT300to500,
     QCD_HT500to700,
     QCD_HT700to1000,
 #    QCD_HT1000to1500,
     QCD_HT1500to2000,
-#    QCD_HT2000toInf,
+    QCD_HT2000toInf,
     ]
 
-allSamples = DY + top + boson + wjets_ht + signals + QCD_HT 
+SMS_T2tt_mStop_500_mLSP_420      = Sample.fromDirectory("SMS_T2tt_mStop_500_mLSP_420",	"/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt_genMET-100_genHT200_mStop-500_mLSP-420_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220323_084123/",	xSection=1.)
+SMS_T2tt_mStop_500_mLSP_420.normalization = 1001819.0 
+SMS_T2tt_mStop_500_mLSP_450      = Sample.fromDirectory("SMS_T2tt_mStop_500_mLSP_450",	"/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt_genMET-100_genHT200_mStop-500_mLSP-450_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220323_084143/",	xSection=1.)
+SMS_T2tt_mStop_500_mLSP_450.normalization = 992089.0
+SMS_T2tt_mStop_500_mLSP_470      = Sample.fromDirectory("SMS_T2tt_mStop_500_mLSP_470",	"/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt_genMET-100_genHT200_mStop-500_mLSP-470_TuneCP5_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220323_084207/",	xSection=1.)
+SMS_T2tt_mStop_500_mLSP_470.normalization = 816993.0
+
+SMS_T2tt_LL_mStop_400_mLSP_380      = Sample.fromDirectory("SMS_T2tt_LL_mStop_400_mLSP_380",      "/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt-4bd_genMET-100_genHT200_mStop-400_mLSP-380_TuneCP5_LLStop_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220325_103840/",		xSection=1.)
+SMS_T2tt_LL_mStop_400_mLSP_380.normalization = 939925.0
+SMS_T2tt_LL_mStop_350_mLSP_335      = Sample.fromDirectory("SMS_T2tt_LL_mStop_350_mLSP_335",      "/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt-4bd_genMET-100_genHT200_mStop-350_mLSP-335_TuneCP5_LLStop_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220325_103812/",		xSection=1.)
+SMS_T2tt_LL_mStop_350_mLSP_335.normalization = 984468.0
+SMS_T2tt_LL_mStop_300_mLSP_290      = Sample.fromDirectory("SMS_T2tt_LL_mStop_300_mLSP_290",      "/eos/vbc/experiments/cms/store/user/prhussai/SMS-T2tt-4bd_genMET-100_genHT200_mStop-300_mLSP-290_TuneCP5_LLStop_13TeV-madgraphMLM-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2_privateUL17nanov9/220325_101251/",		xSection=1.)
+SMS_T2tt_LL_mStop_300_mLSP_290.normalization = 971258.0
+
+compSUSY = [
+		SMS_T2tt_mStop_500_mLSP_420,
+		SMS_T2tt_mStop_500_mLSP_450,
+		SMS_T2tt_mStop_500_mLSP_470,
+		SMS_T2tt_LL_mStop_400_mLSP_380,
+		SMS_T2tt_LL_mStop_350_mLSP_335,
+		SMS_T2tt_LL_mStop_300_mLSP_290,
+	]
+
+
+
+allSamples = DY + top + boson + wjets_ht + signals + QCD_HT + compSUSY 
 
 for s in allSamples:
     
