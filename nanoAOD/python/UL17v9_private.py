@@ -141,7 +141,7 @@ top = [
 WWTo2L2Nu           = Sample.fromDirectory("WWTo2L2Nu",        "/eos/vbc/experiments/cms/store/user/prhussai/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/crab_RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1_privateUL16nanov9/211124_161629/",   xSection=12.178)
 WWTo2L2Nu.normalization = 32147079.1672 
 #WWToLNuQQ           = Sample.fromDirectory("WWToLNuQQ",        "/WWToLNuQQ_13TeV-powheg/",         xSection=49.997)
-WW           	    = Sample.fromDirectory("WW",        "/eos/vbc/experiments/cms/store/user/prhussai/WW_TuneCP5_13TeV-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_083948/",         xSection=49.997)
+WW           	    = Sample.fromDirectory("WW",        "/eos/vbc/experiments/cms/store/user/prhussai/WW_TuneCP5_13TeV-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_083948/",         xSection=63.21 * 1.82)
 WW.normalization    = 15634116.1995
 
 ZZTo2L2Nu           = Sample.fromDirectory("ZZTo2L2Nu",        "/eos/vbc/experiments/cms/store/user/prhussai/ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211124_202934/",                     xSection=0.564)
