@@ -230,7 +230,7 @@ QCD_HT500to700.normalization = 36194860.0
 QCD_HT700to1000      = Sample.fromDirectory("QCD_HT700to1000",      "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT700to1000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_150836/",         xSection=6802)
 QCD_HT700to1000.normalization = 34051754.0
 QCD_HT1000to1500     = Sample.fromDirectory("QCD_HT1000to1500",     "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084429/",        xSection=1206)
-QCD_HT1000to1500.normalization = 10111772.0 
+QCD_HT1000to1500.normalization = 10256089.0 
 QCD_HT1500to2000     = Sample.fromDirectory("QCD_HT1500to2000",     "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/211126_145631/",        xSection=120.4)
 QCD_HT1500to2000.normalization = 7701876.0
 QCD_HT2000toInf      = Sample.fromDirectory("QCD_HT2000toInf",      "/eos/vbc/experiments/cms/store/user/prhussai/QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraph-pythia8/crab_RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1_privateUL17nanov9/220323_084104/",         xSection=25.25)
