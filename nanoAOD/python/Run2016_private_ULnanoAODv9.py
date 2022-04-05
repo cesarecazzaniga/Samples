@@ -64,7 +64,18 @@ MET = [
     MET_Run2016H_UL,
 ]
 
-allSamples =  MET
+DoubleEG_Run2016F_UL	= Sample.fromDirectory("DoubleEG_Run2016F_UL",		"/eos/vbc/experiments/cms/store/user/prhussai/DoubleEG/crab_Run2016F-UL2016_MiniAODv2-v1_privateULRun2016v1_nanov9/211217_170943/")
+DoubleEG_Run2016G_UL	= Sample.fromDirectory("DoubleEG_Run2016G_UL",		"/eos/vbc/experiments/cms/store/user/prhussai/DoubleEG/crab_Run2016G-UL2016_MiniAODv2-v1_privateULRun2016v1_nanov9/211217_170958/")
+DoubleEG_Run2016H_UL	= Sample.fromDirectory("DoubleEG_Run2016H_UL",		"/eos/vbc/experiments/cms/store/user/prhussai/DoubleEG/crab_Run2016H-UL2016_MiniAODv2-v1_privateULRun2016v1_nanov9/211217_171014/")
+
+DoubleEG = [
+		DoubleEG_Run2016F_UL,
+		DoubleEG_Run2016G_UL,
+		DoubleEG_Run2016H_UL,
+	]
+
+
+allSamples =  MET + DoubleEG
 
 for s in allSamples:
     s.json      = os.path.expandvars("$CMSSW_BASE/src/Samples/Tools/data/json/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt")
