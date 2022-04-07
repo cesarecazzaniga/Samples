@@ -149,7 +149,8 @@ ZZTo2L2Nu.normalization = 55393059.2321
 #ZZTo2L2Q            = Sample.fromDirectory("ZZTo2L2Q",             "/ZZTo2L2Q_13TeV_powheg_pythia8/",                           xSection=3.28)
 ZZTo2Q2Nu           = Sample.fromDirectory("ZZTo2Q2Nu",            "/eos/vbc/experiments/cms/store/user/prhussai/ZZTo2Q2Nu_TuneCP5_13TeV-amcatnloFXFX-pythia8/crab_RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2_privateUL18nanov9/211124_210143/",            xSection=4.04)
 ZZTo2Q2Nu.normalization = 137620490.177
-#ZZTo4L              = Sample.fromDirectory("ZZTo4L",               "/eos/vbc/experiments/cms/store/user/prhussai/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/",                             xSection=1.256*1.1)
+ZZTo4L              = Sample.fromDirectory("ZZTo4L",               "/eos/vbc/experiments/cms/store/user/prhussai/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/crab_RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2_privateUL18nanov9/211124_210202/",                             xSection=1.256*1.1)
+ZZTo4L.normalization = 131414241.629 
 
 #WZTo1L3Nu           = Sample.fromDirectory("WZTo1L3Nu"  ,          "/WZTo1L3Nu_13TeV_amcatnloFXFX_madspin_pythia8/",            xSection=(47.13)*(3*0.108)*(0.2) )
 WZTo1L1Nu2Q         = Sample.fromDirectory("WZTo1L1Nu2Q",          "/eos/vbc/experiments/cms/store/user/prhussai/WZTo1L1Nu2Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/crab_RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2_privateUL18nanov9/211124_210100/",          xSection=10.71)
@@ -167,7 +168,7 @@ boson = [
     ZZTo2L2Nu,
 #    #ZZTo2L2Q,
     ZZTo2Q2Nu,
-#    #ZZTo4L,
+    ZZTo4L,
 #    #WZTo1L3Nu,
     WZTo1L1Nu2Q,
 #    #WZTo2L2Q,
