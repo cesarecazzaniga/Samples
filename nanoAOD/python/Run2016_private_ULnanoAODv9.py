@@ -110,6 +110,8 @@ SingleElectron_Run2016H_UL	= Sample.nanoAODfromDAS("SingleElectron_Run2016H_UL",
 
 SingleElectron = [
 		SingleElectron_Run2016F_UL,
+		SingleElectron_Run2016G_UL,
+		SingleElectron_Run2016H_UL,
 	]
 allSamples =  MET + JetHT + DoubleEG + DoubleMuon + SingleMuon + SingleElectron 
 for s in allSamples:
