@@ -26,20 +26,20 @@ else:
     ov = False
 
 # Redirector
-#try:
-#    redirector = sys.modules['__main__'].redirector
-#except:
-#    if "clip" in os.getenv("HOSTNAME").lower():
-#        if __name__ == "__main__" and not options.check_completeness:
-#            from Samples.Tools.config import redirector_global as redirector
-#        else:
-#            from Samples.Tools.config import redirector_clip as redirector
-#    else:
-#        from Samples.Tools.config import redirector as redirector
-#
+try:
+    redirector = sys.modules['__main__'].redirector
+except:
+    if "clip" in os.getenv("HOSTNAME").lower():
+        if __name__ == "__main__" and not options.check_completeness:
+            from Samples.Tools.config import redirector_global as redirector
+        else:
+            from Samples.Tools.config import redirector_clip as redirector
+    else:
+        from Samples.Tools.config import redirector as redirector
+
 ## DB
 from Samples.Tools.config import dbDir
-dbFile = dbDir+'/DB_Run2016_ULnanoAODv9.sql'
+dbFile = dbDir+'/DB_Run2016APV_ULnanoAODv9.sql'
 logger.info("Using db file: %s", dbFile)
 
 from Samples.Tools.config import redirector as redirector

@@ -26,22 +26,22 @@ else:
     ov = False
 
 # Redirector
-#try:
-#    redirector = sys.modules['__main__'].redirector
-#except:
-#    if "clip" in os.getenv("HOSTNAME").lower():
-#        if __name__ == "__main__" and not options.check_completeness:
-#            from Samples.Tools.config import redirector_global as redirector
-#        else:
-#            from Samples.Tools.config import redirector_clip as redirector
-#    else:
-#        from Samples.Tools.config import redirector as redirector
+try:
+    redirector = sys.modules['__main__'].redirector
+except:
+    if "clip" in os.getenv("HOSTNAME").lower():
+        if __name__ == "__main__" and not options.check_completeness:
+            from Samples.Tools.config import redirector_global as redirector
+        else:
+            from Samples.Tools.config import redirector_clip as redirector
+    else:
+        from Samples.Tools.config import redirector as redirector
 
 # DB
-#from Samples.Tools.config import dbDir
-#dbFile = dbDir+'/DB_Run2017_ULnanoAODv9.sql'
-#logger.info("Using db file: %s", dbFile)
-#
+from Samples.Tools.config import dbDir
+dbFile = dbDir+'/DB_Run2017_ULnanoAODv9.sql'
+logger.info("Using db file: %s", dbFile)
+
 ## DoubleMuon
 #DoubleMuon_Run2017B_UL       = Sample.fromDirectory("DoubleMuon_Run2017B_UL",        "/DoubleMuon/Run2017B-UL2017_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
 #DoubleMuon_Run2017C_UL       = Sample.fromDirectory("DoubleMuon_Run2017C_UL",        "/DoubleMuon/Run2017C-UL2017_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
@@ -158,8 +158,37 @@ MET = [
     MET_Run2017F_UL,
 ]
 
+# SingleMuon
+SingleMuon_Run2017B_UL       = Sample.fromDirectory("SingleMuon_Run2017B_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2017B-UL2017_MiniAODv2-v1_privateULRun2017v1_nanov9/211217_205919/")
+SingleMuon_Run2017C_UL       = Sample.fromDirectory("SingleMuon_Run2017C_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2017C-UL2017_MiniAODv2-v1_privateULRun2017v1_nanov9/211217_205936/")
+SingleMuon_Run2017D_UL       = Sample.fromDirectory("SingleMuon_Run2017D_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2017D-UL2017_MiniAODv2-v1_privateULRun2017v1_nanov9/211217_205953/")
+SingleMuon_Run2017E_UL       = Sample.fromDirectory("SingleMuon_Run2017E_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2017E-UL2017_MiniAODv2-v1_privateULRun2017v1_nanov9/211217_210009/")
+SingleMuon_Run2017F_UL       = Sample.fromDirectory("SingleMuon_Run2017F_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2017F-UL2017_MiniAODv2-v1_privateULRun2017v1_nanov9/211217_210026/")
+
+SingleMuon = [
+    SingleMuon_Run2017B_UL,
+    SingleMuon_Run2017C_UL,
+    SingleMuon_Run2017D_UL,
+    SingleMuon_Run2017E_UL,
+    SingleMuon_Run2017F_UL,
+]
+# SingleElectron
+SingleElectron_Run2017B_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2017B_UL",        "/SingleElectron/Run2017B-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2017C_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2017C_UL",        "/SingleElectron/Run2017C-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2017D_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2017D_UL",        "/SingleElectron/Run2017D-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2017E_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2017E_UL",        "/SingleElectron/Run2017E-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2017F_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2017F_UL",        "/SingleElectron/Run2017F-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+
+SingleElectron = [
+    SingleElectron_Run2017B_UL,
+    SingleElectron_Run2017C_UL,
+    SingleElectron_Run2017D_UL,
+    SingleElectron_Run2017E_UL,
+    SingleElectron_Run2017F_UL,
+]
+
 #allSamples = DoubleMuon + MuonEG + DoubleEG + SingleMuon + SingleElectron + JetHT + MET
-allSamples =  MET
+allSamples =  MET  + SingleMuon + SingleElectron
 
 for s in allSamples:
     s.json      = os.path.expandvars("$CMSSW_BASE/src/Samples/Tools/data/json/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt")

@@ -25,6 +25,22 @@ else:
     logger = logging.getLogger(__name__)
     ov = False
 
+# Redirector
+try:
+    redirector = sys.modules['__main__'].redirector
+except:
+    if "clip" in os.getenv("HOSTNAME").lower():
+        if __name__ == "__main__" and not options.check_completeness:
+            from Samples.Tools.config import redirector_global as redirector
+        else:
+            from Samples.Tools.config import redirector_clip as redirector
+    else:
+        from Samples.Tools.config import redirector as redirector
+
+# DB
+from Samples.Tools.config import dbDir
+dbFile = dbDir+'/DB_Run2018_ULnanoAODv9.sql'
+logger.info("Using db file: %s", dbFile)
 
 ## DoubleMuon
 #DoubleMuon_Run2018A_UL       = Sample.nanoAODfromDAS("DoubleMuon_Run2018A_UL",        "/DoubleMuon/Run2018A-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
@@ -72,17 +88,17 @@ else:
 ##
 ##]
 #
-## SingleMuon
-#SingleMuon_Run2018A_UL       = Sample.nanoAODfromDAS("SingleMuon_Run2018A_UL",        "/SingleMuon/Run2018A-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
-#SingleMuon_Run2018B_UL       = Sample.nanoAODfromDAS("SingleMuon_Run2018B_UL",        "/SingleMuon/Run2018B-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
-#SingleMuon_Run2018C_UL       = Sample.nanoAODfromDAS("SingleMuon_Run2018C_UL",        "/SingleMuon/Run2018C-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
-#SingleMuon_Run2018D_UL       = Sample.nanoAODfromDAS("SingleMuon_Run2018D_UL",        "/SingleMuon/Run2018D-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+## SingleElectron
+#SingleElectron_Run2018A_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018A_UL",        "/SingleElectron/Run2018A-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+#SingleElectron_Run2018B_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018B_UL",        "/SingleElectron/Run2018B-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+#SingleElectron_Run2018C_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018C_UL",        "/SingleElectron/Run2018C-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+#SingleElectron_Run2018D_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018D_UL",        "/SingleElectron/Run2018D-UL2018_MiniAODv1_NanoAODv2-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
 #
-#SingleMuon = [
-#    SingleMuon_Run2018A_UL,
-#    SingleMuon_Run2018B_UL,
-#    SingleMuon_Run2018C_UL,
-#    SingleMuon_Run2018D_UL,
+#SingleElectron = [
+#    SingleElectron_Run2018A_UL,
+#    SingleElectron_Run2018B_UL,
+#    SingleElectron_Run2018C_UL,
+#    SingleElectron_Run2018D_UL,
 #    
 #]
 #
@@ -132,8 +148,35 @@ MET = [
 
 ]
 
-#allSamples = DoubleMuon + MuonEG + DoubleEG + SingleMuon + SingleElectron + JetHT + MET
-allSamples = MET
+# SingleMuon
+SingleMuon_Run2018A_UL       = Sample.fromDirectory("SingleMuon_Run2018A_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2018A-UL2018_MiniAODv2-v3_privateULRun2018v1_nanov9/211217_210328/")
+SingleMuon_Run2018B_UL       = Sample.fromDirectory("SingleMuon_Run2018B_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2018B-UL2018_MiniAODv2-v2_privateULRun2018v1_nanov9/211217_210346/")
+SingleMuon_Run2018C_UL       = Sample.fromDirectory("SingleMuon_Run2018C_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2018C-UL2018_MiniAODv2-v2_privateULRun2018v1_nanov9/211217_210403/")
+SingleMuon_Run2018D_UL       = Sample.fromDirectory("SingleMuon_Run2018D_UL",        "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2018D-UL2018_MiniAODv2-v3_privateULRun2018v1_nanov9/211217_210421/")
+
+SingleMuon = [
+    SingleMuon_Run2018A_UL,
+    SingleMuon_Run2018B_UL,
+    SingleMuon_Run2018C_UL,
+    SingleMuon_Run2018D_UL,
+]
+
+# SingleElectron
+SingleElectron_Run2018A_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018A_UL",        "/EGamma/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2018B_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018B_UL",        "/EGamma/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2018C_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018C_UL",        "/EGamma/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2018D_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2018D_UL",        "/EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+
+SingleElectron = [
+    SingleElectron_Run2018A_UL,
+    SingleElectron_Run2018B_UL,
+    SingleElectron_Run2018C_UL,
+    SingleElectron_Run2018D_UL,
+]
+
+
+#allSamples = DoubleMuon + MuonEG + DoubleEG + SingleElectron + SingleElectron + JetHT + MET
+allSamples = MET + SingleMuon + SingleElectron
 
 for s in allSamples:
     s.json      = os.path.expandvars("$CMSSW_BASE/src/Samples/Tools/data/json/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt")

@@ -7,7 +7,7 @@ import os
 if 'SAMPLES_DBDIR' in os.environ:
     dbDir = os.environ['SAMPLES_DBDIR'] 
 elif os.environ['USER'] in ['dietrich.liko']:
-    dbDir = '/users/dietrich.liko/caches/Samples'
+    dbDir = '/groups/hephy/cms/dietrich.liko/caches/Samples'
 elif os.environ['USER'] in ['llechner']:
     dbDir = '/afs/hephy.at/data/llechner01/TTGammaEFT/cache/samples/'
 elif os.environ['USER'] in ['lukas.lechner']: #CLIP

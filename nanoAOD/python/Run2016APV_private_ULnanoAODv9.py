@@ -12,6 +12,7 @@ def get_parser():
     
 # Logging
 if __name__=="__main__":
+    ROOT.PyConfig.IgnoreCommandLineOptions = True
     import Samples.Tools.logger as logger
     logger = logger.get_logger("INFO", logFile = None )
     import RootTools.core.logger as logger_rt
@@ -25,22 +26,23 @@ else:
     logger = logging.getLogger(__name__)
     ov = False
 
+
 # Redirector
-#try:
-#    redirector = sys.modules['__main__'].redirector
-#except:
-#    if "clip" in os.getenv("HOSTNAME").lower():
-#        if __name__ == "__main__" and not options.check_completeness:
-#            from Samples.Tools.config import redirector_global as redirector
-#        else:
-#            from Samples.Tools.config import redirector_clip as redirector
-#    else:
-#        from Samples.Tools.config import redirector as redirector
-#
+try:
+    redirector = sys.modules['__main__'].redirector
+except:
+    if "clip" in os.getenv("HOSTNAME").lower():
+        if __name__ == "__main__" and not options.check_completeness:
+            from Samples.Tools.config import redirector_global as redirector
+        else:
+            from Samples.Tools.config import redirector_clip as redirector
+    else:
+        from Samples.Tools.config import redirector as redirector
+
 ## DB
-#from Samples.Tools.config import dbDir
-#dbFile = dbDir+'/DB_Run2016_ULnanoAODv2.sql'
-#logger.info("Using db file: %s", dbFile)
+from Samples.Tools.config import dbDir
+dbFile = dbDir+'/DB_Run2016APV_ULnanoAODv2.sql'
+logger.info("Using db file: %s", dbFile)
 
 
 # MET
@@ -65,7 +67,38 @@ MET = [
 #    MET_Run2016H_UL,
 ]
 
-allSamples =  MET
+# SingleMuon
+SingleMuon_Run2016B_ver2_HIPM_UL	= Sample.fromDirectory("SingleMuon_Run2016B_ver2_HIPM_UL",		"/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2016B-ver2_HIPM_UL2016_MiniAODv2-v2_privateULRun2016v1_nanov9/211217_171244/")
+SingleMuon_Run2016C_HIPM_UL	        = Sample.fromDirectory("SingleMuon_Run2016C_HIPM_UL",		    "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2016C-HIPM_UL2016_MiniAODv2-v2_privateULRun2016v1_nanov9/211217_171301/")
+SingleMuon_Run2016D_HIPM_UL	        = Sample.fromDirectory("SingleMuon_Run2016D_HIPM_UL",		    "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2016D-HIPM_UL2016_MiniAODv2-v2_privateULRun2016v1_nanov9/211217_171317/")
+SingleMuon_Run2016E_HIPM_UL	        = Sample.fromDirectory("SingleMuon_Run2016E_HIPM_UL",		    "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2016E-HIPM_UL2016_MiniAODv2-v2_privateULRun2016v1_nanov9/211217_171334/")
+SingleMuon_Run2016F_HIPM_UL	        = Sample.fromDirectory("SingleMuon_Run2016F_HIPM_UL",		    "/eos/vbc/experiments/cms/store/user/prhussai/SingleMuon/crab_Run2016F-HIPM_UL2016_MiniAODv2-v2_privateULRun2016v1_nanov9/211217_171351/")
+
+SingleMuon = [
+    SingleMuon_Run2016B_ver2_HIPM_UL,
+    SingleMuon_Run2016C_HIPM_UL,
+    SingleMuon_Run2016D_HIPM_UL,
+    SingleMuon_Run2016E_HIPM_UL,
+    SingleMuon_Run2016F_HIPM_UL
+]
+
+# SingleElectron from DAS
+SingleElectron_Run2016B_ver2_HIPM_UL  = Sample.nanoAODfromDAS("SingleElectron_Run2016B_ver2_HIPM_UL",   "/SingleElectron/Run2016B-ver2_HIPM_UL2016_MiniAODv2_NanoAODv9-v2/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2016C_HIPM_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2016C_HIPM_UL",        "/SingleElectron/Run2016C-HIPM_UL2016_MiniAODv2_NanoAODv9-v2/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2016D_HIPM_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2016D_HIPM_UL",        "/SingleElectron/Run2016D-HIPM_UL2016_MiniAODv2_NanoAODv9-v2/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2016E_HIPM_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2016E_HIPM_UL",        "/SingleElectron/Run2016E-HIPM_UL2016_MiniAODv2_NanoAODv9-v2/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+SingleElectron_Run2016F_HIPM_UL       = Sample.nanoAODfromDAS("SingleElectron_Run2016F_HIPM_UL",        "/SingleElectron/Run2016F-HIPM_UL2016_MiniAODv2_NanoAODv9-v2/NANOAOD", dbFile=dbFile, redirector=redirector, overwrite=ov)
+
+SingleElectron = [
+    SingleElectron_Run2016B_ver2_HIPM_UL,
+    SingleElectron_Run2016C_HIPM_UL,
+    SingleElectron_Run2016D_HIPM_UL,
+    SingleElectron_Run2016E_HIPM_UL,
+    SingleElectron_Run2016F_HIPM_UL
+]
+
+
+allSamples =  MET + SingleMuon + SingleElectron
 
 for s in allSamples:
     s.json      = os.path.expandvars("$CMSSW_BASE/src/Samples/Tools/data/json/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt")
